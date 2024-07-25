@@ -26,7 +26,7 @@ SECRET_KEY = 'cj!vn0-r7w_-m@cueq-yo-(9)^ht2hk!)&x+^8=-dj%b+5#jk7'
 DEBUG = True
 
 ALLOWED_HOSTS = ["nagaswrn.pythonanywhere.com","localhost"]
-
+# ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'dhoothaapp',
 ]
 
 MIDDLEWARE = [
