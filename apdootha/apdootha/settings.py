@@ -25,8 +25,8 @@ SECRET_KEY = 'cj!vn0-r7w_-m@cueq-yo-(9)^ht2hk!)&x+^8=-dj%b+5#jk7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["nagaswrn.pythonanywhere.com","localhost"]
-# ALLOWED_HOSTS = ["*"]
+#ALLOWED_HOSTS = ["nagaswrn.pythonanywhere.com","localhost"]
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'rest_framework.authtoken',
     'dhoothaapp',
 ]
 
@@ -69,7 +71,15 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'apdootha.wsgi.application'
-
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    # 'DEFAULT_PERMISSION_CLASSES': [
+    #     'rest_framework.permissions.IsAuthenticated',
+    #     'rest_framework.permissions.IsAdminUser'
+    # ],
+}
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases

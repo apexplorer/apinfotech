@@ -1,6 +1,6 @@
-from django.urls import path,include
-from dhoothaapp.views import *
+from django.urls import path
+from .views import LoginView
+
 urlpatterns = [
-    
-    path('',Home,name="home"),
+    path('login/', LoginView.as_view(), name='login'),
 ]
