@@ -72,34 +72,34 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'apdootha.wsgi.application'
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication',
-    ],
-    # 'DEFAULT_PERMISSION_CLASSES': [
-    #     'rest_framework.permissions.IsAuthenticated',
-    #     'rest_framework.permissions.IsAdminUser'
+    # 'DEFAULT_AUTHENTICATION_CLASSES': [
+    #     'rest_framework.authentication.TokenAuthentication',
     # ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.IsAdminUser'
+    ],
 }
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # }
     'default': {
-        'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'nagaswrn$default',
-        'USER': 'nagaswrn',
-        'PASSWORD': '1mpre$$10n',
-        'HOST': 'nagaswrn.mysql.pythonanywhere-services.com',   # Or an IP Address that your DB is hosted on
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql', 
+    #     'NAME': 'nagaswrn$default',
+    #     'USER': 'nagaswrn',
+    #     'PASSWORD': '1mpre$$10n',
+    #     'HOST': 'nagaswrn.mysql.pythonanywhere-services.com',   # Or an IP Address that your DB is hosted on
+    #     'PORT': '3306',
+    # }
 }
 
-
+AUTH_USER_MODEL = "dhoothaapp.Account"
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
