@@ -15,6 +15,10 @@ class LoginView(APIView):
         user = authenticate(username=username, password=password)
         if user:
             token, created = Token.objects.get_or_create(user=user)
+            if user.is_staff:
+                role="admin"
+            else:
+                role="member"
             if user.phone is not None:
                 phone=user.phone
             else:
