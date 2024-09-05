@@ -23,7 +23,7 @@ class LoginView(APIView):
                 phone=user.phone
             else:
                 phone="9501834834"
-            return Response({'token': token.key,'username':user.username,"email":user.email,"phone":phone,"role":user.is_staff}, status=status.HTTP_200_OK)
+            return Response({'token': token.key,'username':user.username,"email":user.email,"phone":phone,"role":role}, status=status.HTTP_200_OK)
         else:
             return Response({'username': 'Invalid Credentials',"password":"wrong"}, status=status.HTTP_401_UNAUTHORIZED)
 class Registration(APIView):
